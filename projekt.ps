@@ -1,0 +1,65 @@
+%!PS-Adobe-3.0
+/Times-Bold findfont 60 scalefont setfont
+
+%kolor tla rgb(161, 193, 89)
+gsave
+161 255 div 193 255 div 89 255 div setrgbcolor clippath fill 
+grestore
+
+newpath
+/filledegg 
+{
+	/radius exch def
+	gsave
+	newpath
+	0 0 radius 180 360 arc
+	1 2 scale 
+	0 0 radius 0 180 arc
+	gsave
+	fill
+	grestore
+	4 setlinewidth
+	0 0 0 setrgbcolor
+	stroke
+	grestore
+} def
+
+%pierwsze jajko rgb(234, 63, 97)
+%drugie jajko rgb(33, 99, 161)
+%trzecie jajko rgb(239, 143, 69)
+%czwarte jajko rgb(216, 57, 138)
+
+/tab_x[ 200 275 425 360 ] def
+/tab_y[ 200 300 200 300 ] def
+/tab_rot[ 45 15 -45 -20 ] def
+/tab_color[ 234 33 216 239 ] def
+/tab_color1[ 63 99 57 143 ] def
+/tab_color2[ 97 161 138 69 ] def
+0 1 3  
+{
+	gsave
+	dup 
+	/index exch def
+	tab_x index get tab_y index get translate
+	tab_rot index get rotate
+	tab_color index get 255 div tab_color1 index get 255 div tab_color2 index get 255 div setrgbcolor
+	70 filledegg
+	grestore
+} for
+
+%kolor duzego jajka rgb(231, 229, 227)
+
+gsave
+231 255 div 229 255 div 227 255 div setrgbcolor
+312 170 translate
+100 filledegg
+grestore
+
+gsave
+0.5 0.5 0.5 setrgbcolor
+133 597 moveto (Happy Easter!) show
+grestore
+
+130 600 moveto (Happy Easter!) show
+
+showpage
